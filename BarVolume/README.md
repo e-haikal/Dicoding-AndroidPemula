@@ -1,146 +1,68 @@
-# Volume Calculator App
+## **Project Name: Bar Volume Calculator**
 
-This application is a simple Android app developed in Kotlin that calculates the volume of a rectangular prism. Users can input the length, width, and height, and the app will compute and display the volume.
+**Description:**
 
-## Features
+This Android application calculates the volume of a rectangular bar based on the user's input for length, width, and height.
 
-- Input fields for length, width, and height
-- Calculate button to compute the volume
-- Input validation to ensure all fields are filled
-- State management to retain data during configuration changes (e.g., screen rotation)
+**Features:**
 
-## Code Explanation
+* User-friendly interface with EditText fields for length, width, and height.
+* Clear error messages for empty input fields.
+* Calculates the volume and displays the result in a TextView.
+* Supports device orientation changes by saving and restoring the calculated volume using `onSaveInstanceState` and `onRestoreInstanceState`.
 
-### Package Declaration
+**Getting Started:**
 
-package com.siaptekno.barvolume
+1. **Prerequisites:**
+    * Android Studio (Download from developer.android.com)
+    * Basic knowledge of Kotlin programming
 
-This line defines the package name of the application, which helps organize the code and prevent naming conflicts.
+2. **Downloading the Project:**
+    * Clone or download the project repository containing the source code.
 
-### Imports
+3. **Importing into Android Studio:**
+    * Open Android Studio and select "Open an existing Android Studio project"
+    * Navigate to the downloaded project directory and select "Open".
 
-The necessary Android components are imported to use in the app.
+4. **Running the App:**
+    * Make sure your device is connected or an emulator is running.
+    * Click the "Run" button in Android Studio.
 
-import android.os.Bundle
-import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+**Using the App:**
 
-### MainActivity Class
+1. Enter the length, width, and height of the bar in the respective EditText fields.
+2. Click the "Calculate" button.
+3. The calculated volume will be displayed in the TextView below.
 
-class MainActivity : AppCompatActivity(), View.OnClickListener
+**Technical Details:**
 
-The MainActivity class extends AppCompatActivity to provide compatibility with modern Android features and implements View.OnClickListener to handle button clicks.
+* **Language:** Kotlin
+* **Android Version:** Target API level should be specified based on your project's requirements.
+* **Libraries:** No external libraries are used in this example.
 
-### Member Variables
+**Code Breakdown:**
 
-private lateinit var widthEdt: EditText
-private lateinit var heightEdt: EditText
-private lateinit var lengthEdt: EditText
-private lateinit var calculateBtn: Button
-private lateinit var resultTv: TextView
+**MainActivity.kt:**
 
-These variables represent the UI components: input fields for dimensions and the button to trigger the calculation.
+* **Class:** `MainActivity` extends `AppCompatActivity` and implements `View.OnClickListener`.
+* **Variables:**
+    * `widthEdt`, `heightEdt`, `lengthEdt`: EditText views for user input.
+    * `calculateBtn`: Button to trigger the calculation.
+    * `resultTv`: TextView to display the calculated volume.
+    * `STATE_RESULT`: Constant string used as a key for saving and restoring the result.
+* **onCreate() method:**
+    * Initializes UI elements using `findViewById`.
+    * Sets the click listener for the calculate button using `setOnClickListener`.
+    * Restores the previous result from `savedInstanceState`, if available.
+* **onSaveInstanceState() method:**
+    * Saves the current result in the `outState` Bundle using the `STATE_RESULT` key.
+* **onClick() method:**
+    * Handles clicks on the calculate button.
+    * Validates user input for empty fields and displays error messages if necessary.
+    * Extracts input values, converts them to doubles, and calculates the volume.
+    * Displays the calculated volume in the result TextView.
 
-### Companion Object
+**Additional Notes:**
 
-companion object {
-private const val STATE_RESULT = "state_result"
-}
-
-The companion object holds constants that can be accessed without creating an instance of the class, such as the key for saving the volume result.
-
-### onCreate Method
-
-override fun onCreate(savedInstanceState: Bundle?) {
-super.onCreate(savedInstanceState)
-enableEdgeToEdge()
-setContentView(R.layout.activity_main)
-
-The onCreate method initializes the activity. It sets the content view and enables edge-to-edge layout.
-
-#### Adjusting Layout for System UI
-
-ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-insets
-}
-
-This code adjusts the layout to avoid overlapping with system UI elements like the status bar.
-
-#### Initializing UI Components
-
-lengthEdt = findViewById(R.id.lengthEdt)
-widthEdt = findViewById(R.id.widthEdt)
-heightEdt = findViewById(R.id.heightEdt)
-calculateBtn = findViewById(R.id.resultBtn)
-resultTv = findViewById(R.id.resultTv)
-calculateBtn.setOnClickListener(this)
-
-Each UI component is linked to its corresponding layout element, and the button is set to trigger the onClick method when clicked.
-
-### Restoring State
-
-if (savedInstanceState != null) {
-val result = savedInstanceState.getString(STATE_RESULT)
-resultTv.text = result
-}
-
-This block restores the volume result if the activity is recreated (e.g., during configuration changes).
-
-### onSaveInstanceState Method
-
-override fun onSaveInstanceState(outState: Bundle) {
-super.onSaveInstanceState(outState)
-outState.putString(STATE_RESULT, resultTv.text.toString())
-}
-
-This method saves the current volume result before the activity is destroyed.
-
-### onClick Method
-
-override fun onClick(v: View?) {
-if (v?.id == R.id.resultBtn) {
-
-The onClick method handles the button click event. It checks if the clicked view is the calculate button.
-
-#### Input Validation
-
-val inputLength = lengthEdt.text.toString().trim()
-val inputWidth = widthEdt.text.toString().trim()
-val inputHeight = heightEdt.text.toString().trim()
-var isEmptyFields = false
-
-if (inputLength.isEmpty()) {
-isEmptyFields = true
-lengthEdt.error = "Field ini tidak boleh kosong"
-}
-if (inputWidth.isEmpty()) {
-isEmptyFields = true
-widthEdt.error = "Field ini tidak boleh kosong"
-}
-if (inputHeight.isEmpty()) {
-isEmptyFields = true
-heightEdt.error = "Field ini tidak boleh kosong"
-}
-
-This section retrieves and trims input values, checks for empty fields, and sets error messages as needed.
-
-#### Calculating Volume
-
-if (!isEmptyFields) {
-val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-resultTv.text = volume.toString()
-}
-
-If all fields are filled, the app calculates the volume and displays it in the result text view.
-
-## Conclusion
-
-This Kotlin application demonstrates essential concepts in Android development, including UI interaction, input validation, state management, and lifecycle handling. By following this code, beginners can learn to create functional Android apps.
+* You can customize the app further by adding features like formatting the output with decimal places, handling invalid input formats, or adding unit conversion options.
+* Consider using proper unit handling for length, width, and height (e.g., centimeters, meters) in a real-world application.
