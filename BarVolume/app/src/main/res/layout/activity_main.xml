@@ -8,12 +8,106 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Bar Volume Calculator"
+        android:textStyle="bold"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/panjangTv"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:id="@+id/panjangTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Panjang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTv"
+        app:layout_constraintBottom_toTopOf="@id/panjangEdt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/panjangEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/panjangTv"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <TextView
+        android:id="@+id/lebarTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lebar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/panjangEdt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"/>
+    <EditText
+        android:id="@+id/lebarEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lebarTv"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <TextView
+        android:id="@+id/tinggiIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tinggi"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lebarEdt"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="5dp"/>
+    <EditText
+        android:id="@+id/tinggiEdt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tinggiIv"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <Button
+        android:id="@+id/hasilBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hitung"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tinggiEdt"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"/>
+
+    <TextView
+        android:id="@+id/hasilTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hasil"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hasilBtn"/>
+
+
+
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Hello World!"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
