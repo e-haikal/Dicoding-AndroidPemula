@@ -11,92 +11,92 @@
         android:id="@+id/titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bar Volume Calculator"
+        android:text="@string/appName"
         android:textStyle="bold"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/panjangTv"
+        app:layout_constraintBottom_toTopOf="@id/lengthIv"
         android:layout_marginTop="15dp"/>
 
     <TextView
-        android:id="@+id/panjangTv"
+        android:id="@+id/lengthIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Panjang"
+        android:text="@string/length"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleTv"
-        app:layout_constraintBottom_toTopOf="@id/panjangEdt"
+        app:layout_constraintBottom_toTopOf="@id/lengthEdt"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"/>
 
     <EditText
-        android:id="@+id/panjangEdt"
+        android:id="@+id/lengthEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/panjangTv"
+        app:layout_constraintTop_toBottomOf="@id/lengthIv"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"/>
 
     <TextView
-        android:id="@+id/lebarTv"
+        android:id="@+id/widthTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Lebar"
+        android:text="@string/width"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/panjangEdt"
+        app:layout_constraintTop_toBottomOf="@id/lengthEdt"
         android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"/>
     <EditText
-        android:id="@+id/lebarEdt"
+        android:id="@+id/widthEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lebarTv"
+        app:layout_constraintTop_toBottomOf="@id/widthTv"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"/>
 
     <TextView
-        android:id="@+id/tinggiIv"
+        android:id="@+id/heightIv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tinggi"
+        android:text="@string/height"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lebarEdt"
+        app:layout_constraintTop_toBottomOf="@id/widthEdt"
         android:layout_marginStart="15dp"
         android:layout_marginTop="5dp"/>
     <EditText
-        android:id="@+id/tinggiEdt"
+        android:id="@+id/heightEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tinggiIv"
+        app:layout_constraintTop_toBottomOf="@id/heightIv"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"/>
 
     <Button
-        android:id="@+id/hasilBtn"
+        android:id="@+id/resultBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hitung"
+        android:text="@string/calculate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tinggiEdt"
+        app:layout_constraintTop_toBottomOf="@id/heightEdt"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"/>
 
     <TextView
-        android:id="@+id/hasilTv"
+        android:id="@+id/resultTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hasil"
+        android:text="@string/result"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/hasilBtn"/>
+        app:layout_constraintTop_toBottomOf="@id/resultBtn"/>
 
 
 
