@@ -26,8 +26,7 @@ class MoveWithDataActivity : AppCompatActivity() {
 
         val name = intent.getStringExtra(EXTRA_NAME)
         val age = intent.getIntExtra(EXTRA_AGE, 0)
-
-        val text = intent.getStringExtra(EXTRA_NAME)
+        val text = "Name : $name, Your Age : $age"
         dataReceivedTextView.text = text
 
     }

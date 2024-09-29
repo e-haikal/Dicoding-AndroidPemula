@@ -26,7 +26,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/moveActivityButton"
+        app:layout_constraintBottom_toTopOf="@id/moveActivityObjectButton"
         android:layout_marginBottom="16dp" />
+    <Button
+        android:id="@+id/moveActivityObjectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/move_with_object"
+        app:layout_constraintTop_toBottomOf="@id/moveActivityWithDataButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
 
