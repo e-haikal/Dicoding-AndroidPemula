@@ -22,6 +22,9 @@
             android:name=".MoveActivity"
             android:exported="false" />
         <activity
+            android:name=".MoveForResultActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
