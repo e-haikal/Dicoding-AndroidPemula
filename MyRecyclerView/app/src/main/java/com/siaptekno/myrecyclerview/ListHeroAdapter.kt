@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.siaptekno.myrecyclerview.databinding.ItemRowHeroBinding
 
 class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
 
@@ -17,34 +18,37 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
         this.onItemClickCallback = onItemClickCallback
     }
 
+/*
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+*/
+/*
+//        Delete the code below to practice view Binding
         val imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         val tvName : TextView = itemView.findViewById(R.id.tv_item_name)
         val tvDescription : TextView = itemView.findViewById(R.id.tv_item_description)
+*//*
+
 
     }
+*/
+    class ListViewHolder(var binding: ItemRowHeroBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_hero, parent, false)
-        return ListViewHolder(view)
+        /*// OLD Codes: using manual lookup binding start
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_hero, parent, false)*/
+        val binding = ItemRowHeroBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, description, photo) = listHero[position]
 
-/*
-        // Old code to load image from local resource
-        holder.imgPhoto.setImageResource(photo)
-*/
-
-        // Load the image using Glide
+        // If photo is a URL or path
         Glide.with(holder.itemView.context)
-            .load(photo) // URL of the image
-            .into(holder.imgPhoto) // ImageView to display the image
-
-        holder.tvName.text = name
-        holder.tvDescription.text = description
-
+            .load(photo)
+            .into(holder.binding.imgItemPhoto)
+        holder.binding.tvItemName.text = name
+        holder.binding.tvItemDescription.text = description
         holder.itemView.setOnClickListener {
             onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
     }
