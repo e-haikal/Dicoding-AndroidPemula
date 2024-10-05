@@ -1,5 +1,6 @@
 package com.siaptekno.yogyacampus
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +22,17 @@ class ListCampusAdapter(private val listCampus: ArrayList<Campus>) : RecyclerVie
             .into(holder.binding.itemPhotoImageView)
         holder.binding.itemNameTextView.text = name
         holder.binding.itemDescriptionTextView.text = description
+
+        // Set click listener
+        holder.itemView.setOnClickListener {
+            val context = holder.itemView.context
+            val intent = Intent(context, DetailActivity::class.java).apply {
+                putExtra("EXTRA_NAME", name)
+                putExtra("EXTRA_DESCRIPTION", description)
+                putExtra("EXTRA_PHOTO", photo)
+            }
+            context.startActivity(intent)
+        }
 
     }
 
