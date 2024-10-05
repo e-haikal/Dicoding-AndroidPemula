@@ -57,4 +57,7 @@ dependencies {
     //impelementasi library glides
     implementation(libs.glide)
 
+    implementation (libs.circleimageview)
+
+
 }
