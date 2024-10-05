@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adapter<ListHeroAdapter.ListViewHolder>() {
 
@@ -30,12 +31,22 @@ class ListHeroAdapter(private val listHero: ArrayList<Hero>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, description, photo) = listHero[position]
+
+/*
+        // Old code to load image from local resource
         holder.imgPhoto.setImageResource(photo)
+*/
+
+        // Load the image using Glide
+        Glide.with(holder.itemView.context)
+            .load(photo) // URL of the image
+            .into(holder.imgPhoto) // ImageView to display the image
+
         holder.tvName.text = name
         holder.tvDescription.text = description
 
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
-
+        holder.itemView.setOnClickListener {
+            onItemClickCallback.onItemClicked(listHero[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
