@@ -35,10 +35,12 @@ class MainActivity : AppCompatActivity() {
         val dataName = resources.getStringArray(R.array.data_name_array)
         val dataDescription = resources.getStringArray(R.array.data_description_array)
         val dataPhoto = resources.getStringArray(R.array.data_photo_array)
+        val countryRank = resources.getStringArray(R.array.country_rank_array)
+        val worldRank = resources.getStringArray(R.array.world_rank_array)
 
         val listCampus = ArrayList<Campus>()
         for (i in dataName.indices) {
-            val campus = Campus(dataName[i], dataDescription[i], dataPhoto[i])
+            val campus = Campus(dataName[i], dataDescription[i], dataPhoto[i], countryRank[i], worldRank[i])
             listCampus.add(campus)
         }
         return listCampus

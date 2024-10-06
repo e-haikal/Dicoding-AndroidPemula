@@ -35,11 +35,15 @@ class DetailActivity : AppCompatActivity() {
         val name = intent.getStringExtra("EXTRA_NAME")
         val description = intent.getStringExtra("EXTRA_DESCRIPTION")
         val photo = intent.getStringExtra("EXTRA_PHOTO")
+        val countryRank = intent.getStringExtra("EXTRA_COUNTRY_RANK")
+        val worldRank = intent.getStringExtra("EXTRA_WORLD_RANK")
 
         // Set data to views
         binding.detailNameTextView.text = name
         binding.detailDescriptionTextView.text = description
         Glide.with(this).load(photo).into(binding.detailPhotoImageView)
+        binding.dataCountryRankTextView.text = countryRank
+        binding.dataWorldRankTextView.text = worldRank
 
         // Set up the share button click listener
         binding.actionShare.setOnClickListener {

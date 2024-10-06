@@ -14,7 +14,7 @@ class ListCampusAdapter(private val listCampus: ArrayList<Campus>) : RecyclerVie
     class ListViewHolder(var binding: ItemRowCampusBinding) :RecyclerView.ViewHolder(binding.root)
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        val (name, description, photo) = listCampus[position]
+        val (name, description, photo, countryRank, worldRank) = listCampus[position]
 
         // If photo is a URL or path
         Glide.with(holder.itemView.context)
@@ -30,6 +30,8 @@ class ListCampusAdapter(private val listCampus: ArrayList<Campus>) : RecyclerVie
                 putExtra("EXTRA_NAME", name)
                 putExtra("EXTRA_DESCRIPTION", description)
                 putExtra("EXTRA_PHOTO", photo)
+                putExtra("EXTRA_COUNTRY_RANK", countryRank)
+                putExtra("EXTRA_WORLD_RANK", worldRank)
             }
             context.startActivity(intent)
         }

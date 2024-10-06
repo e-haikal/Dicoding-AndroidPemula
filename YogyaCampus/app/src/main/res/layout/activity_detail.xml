@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Country Rank : "/>
+                    android:text="Country Rank: "/>
                 <TextView
                     android:id="@+id/dataCountryRankTextView"
                     android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
                     android:id="@+id/worldRankTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="World Rank : " />
+                    android:text="World Rank: " />
                 <TextView
                     android:id="@+id/dataWorldRankTextView"
                     android:layout_width="wrap_content"
@@ -115,6 +115,14 @@
             android:layout_marginTop="8dp"
             tools:text="Detail Description"/>
 
+        <TextView
+            android:id="@+id/sourcestTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:layout_marginTop="12dp"
+            android:text="Sources : \nhttps://www.4icu.org/id/yogyakarta-sr/ "/>
     </LinearLayout>
 
 
