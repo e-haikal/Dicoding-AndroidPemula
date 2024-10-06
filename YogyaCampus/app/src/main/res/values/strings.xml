@@ -92,4 +92,41 @@
         <item>https://www.4icu.org/i/logos-seals/17502.png</item>
     </string-array>
 
+    <!--    List of campus name data-->
+    <string-array name="country_rank_array">
+        <item>2</item>
+        <item>19</item>
+        <item>28</item>
+        <item>33</item>
+        <item>40</item>
+        <item>52</item>
+        <item>53</item>
+        <item>79</item>
+        <item>81</item>
+        <item>90</item>
+        <item>103</item>
+        <item>119</item>
+        <item>124</item>
+        <item>150</item>
+        <item>168</item>
+    </string-array>
+
+    <!--    List of campus name data-->
+    <string-array name="world_rank_array">
+        <item>408</item>
+        <item>1448</item>
+        <item>1692</item>
+        <item>1909</item>
+        <item>2334</item>
+        <item>2661</item>
+        <item>2729</item>
+        <item>5396</item>
+        <item>3647</item>
+        <item>3952</item>
+        <item>4322</item>
+        <item>4905</item>
+        <item>5140</item>
+        <item>5854</item>
+        <item>6463</item>
+    </string-array>
 </resources>

@@ -1,5 +1,6 @@
 package com.siaptekno.yogyacampus
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.enableEdgeToEdge
@@ -40,6 +41,12 @@ class DetailActivity : AppCompatActivity() {
         binding.detailDescriptionTextView.text = description
         Glide.with(this).load(photo).into(binding.detailPhotoImageView)
 
+        // Set up the share button click listener
+        binding.actionShare.setOnClickListener {
+            shareContent(name, description)
+        }
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -51,5 +58,19 @@ class DetailActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun shareContent(name: String?, description: String?) {
+        val shareText = "$name\n$description"
+
+        // Create an intent to share the content
+        val shareIntent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, shareText)
+            type = "text/plain"
+        }
+
+        // Start the share intent
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
 }
