@@ -3,6 +3,7 @@ package com.siaptekno.yogyacampus
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -48,6 +49,9 @@ class DetailActivity : AppCompatActivity() {
         // Set up the share button click listener
         binding.actionShare.setOnClickListener {
             shareContent(name, description)
+        }
+        binding.actionFavorite.setOnClickListener {
+            Toast.makeText(this, "Added to Favorit!", Toast.LENGTH_SHORT).show()
         }
 
 
