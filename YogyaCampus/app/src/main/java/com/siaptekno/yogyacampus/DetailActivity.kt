@@ -51,7 +51,7 @@ class DetailActivity : AppCompatActivity() {
             shareContent(name, description)
         }
         binding.actionFavorite.setOnClickListener {
-            Toast.makeText(this, "Added to Favorit!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Added to Favorite!", Toast.LENGTH_SHORT).show()
         }
 
 
