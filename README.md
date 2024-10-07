@@ -5,18 +5,18 @@ Repository for Documentations [Dicoding - Belajar Membuat Aplikasi Android untuk
 Record Project Belajar Membuat Aplikasi Android untuk Pemula from [Dicoding Indonesia](https://www.dicoding.com/)
 
 ## Screenshots Final Submission
-> Available soon
+![My Image](YogyaCampus/screenshot/Mockup.png)
 
 ## Features
 
 Final Submission Checklists
 - [x] Display page about
-- [ ] Display splash screen
-- [ ] Display button back at Action Bar
-- [ ] A detail page appears when an item is clicked
-- [ ] Display images and information in the format list
-- [ ] Display images and information on the detail page
-- [ ] Include button favorite and share with implicit intent
+- [x] Display splash screen
+- [x] Display button back at Action Bar
+- [x] A detail page appears when an item is clicked
+- [x] Display images and information in the format list
+- [x] Display images and information on the detail page
+- [x] Include button favorite and share with implicit intent
 
 ## Installation
 Download and install beta version here (available soon)
