@@ -19,7 +19,7 @@ Final Submission Checklists
 - [x] Include button favorite and share with implicit intent
 
 ## Installation
-Download and install beta version [here](https://github.com/e-haikal/Dicoding-AndroidPemula/releases/download/v1.1.0/YogyaCampus_1.1.0.apk).
+Download and install beta version [here](https://github.com/e-haikal/Dicoding-AndroidPemula/releases/download/v1.0.0/YogyaCampus_1.0.0.apk).
 
 ## Author
 - **Asman Haikal**
